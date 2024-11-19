@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Roboto_Mono } from "next/font/google";
+import { ConvexClientProvider } from "./providers/ConvexClientProvider";
 
 export const metadata: Metadata = {
   title: "Podcastr",
@@ -26,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${robotoMono.variable} antialiased font-[family-name:var(--font-geist-mono)`}
       >
-        {children}
+        <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   );
